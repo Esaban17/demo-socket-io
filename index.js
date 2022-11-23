@@ -22,7 +22,7 @@ let activeUsers = [];
 
 const io = require('socket.io')(http, {
     cors: {
-        origin: "https://frontend-two-pink.vercel.app"
+        origin: "https://frontpro.vercel.app"
     }
 });
 
