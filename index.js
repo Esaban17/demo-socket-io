@@ -9,6 +9,15 @@ const cors = require('cors');
 //Middleware
 app.use(cors());
 
+//CORS
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    next();
+});
+
 let activeUsers = [];
 
 const io = require('socket.io')(http, {
